@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HUB_REPO = 'DOCKER_HUB_USERNAME/portfolio'
+        DOCKER_HUB_REPO = 'izzatzaidi/izzat-devops'
         IMAGE_TAG = "${env.BUILD_NUMBER}"
     }
 
@@ -10,7 +10,7 @@ pipeline {
         stage('Code Pull') {
             steps {
                 echo 'Pulling source code from GitHub...'
-                git branch: 'main', url: 'https://github.com/GITHUB_USERNAME/portfolio.git'
+                git branch: 'main', url: 'https://github.com/izzatzaidi/Devops.git'
             }
         }
 
