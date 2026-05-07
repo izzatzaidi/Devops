@@ -21,7 +21,14 @@ pipeline {
                 sh "docker tag ${DOCKER_HUB_REPO}:${IMAGE_TAG} ${DOCKER_HUB_REPO}:latest"
             }
         }
-
+stage('Build Docker Image') {
+    steps {
+        echo 'Building Docker image...'
+        sh "ls -la"           // add this line temporarily
+        sh "docker build -t ${DOCKER_HUB_REPO}:${IMAGE_TAG} ."
+        sh "docker tag ${DOCKER_HUB_REPO}:${IMAGE_TAG} ${DOCKER_HUB_REPO}:latest"
+    }
+}
         stage('Push Image') {
             steps {
                 echo 'Pushing Docker image to Docker Hub...'
