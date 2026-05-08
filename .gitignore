@@ -1,0 +1,22 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+logs/
+
+# Docker
+*.tar
+
+# Kubernetes secrets
+*.secret.yaml
+secrets/
+
+# Environment variables
+.env
+.env.local
+
+# Editor files
+.vscode/
+.idea/
